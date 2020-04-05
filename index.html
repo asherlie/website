@@ -1,0 +1,105 @@
+<html>
+<!--menlo regular-->
+<body style="background: beige; font-family: menlo; font-size: 15px; font-style: regular ">
+<script type="text/javascript">
+     function showhide(id, button_id, more_txt, less_txt) {
+       	var e = document.getElementById(id);
+       	var eb = document.getElementById(button_id);
+            e.style.display = (e.style.display == 'block') ? 'none' : 'block'; 
+            eb.text = (e.style.display == 'block') ? less_txt : more_txt;
+     }
+</script>
+
+<link rel="stylesheet" type="text/css" href="style.css">
+
+<h1>asher lieber's personal website</h1>
+<HR WIDTH="100%">
+<a href="resume.pdf"><strong>resume</strong></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://github.com/asherlie"><strong>github</strong></a>
+<HR WIDTH="100%">
+<strong>some projects (more can be found on github)</strong><br>
+
+<br>
+      <strong>PEA</strong> is used to securely create and sign petitions over a multi-user network<br>
+            <div id="PEA_vis" style="display: none">
+            &nbsp;&nbsp;&nbsp;&nbsp;- PEA is written in c<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;- PEA is hosted on github at <a href="http://github.com/asherlie/pea">asherlie/pea</a><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;- PEA is able to record signatures securely by having the kernel report credentials <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;through AF_UNIX sockets using SO_PEERCRED for linux and getpeereid() otherwise if<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;it is available, avoiding relying on signers to report their own credentials<br>
+            </div>
+      <a id="PEA_but" href="javascript:showhide('PEA_vis', 'PEA_but', 'more about PEA', 'less about PEA')">more about PEA</a>
+<br>
+<br>
+      <strong>ASHIO</strong> contains an implementation of the c standard library's getline() and tab_complete(), a function used for tab completion<br>
+            <div id="AIO_vis" style="display: none">
+            &nbsp;&nbsp;&nbsp;&nbsp;- ASHIO is written in c<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;- ASHIO is hosted on github at <a href="http://github.com/asherlie/ashio">asherlie/ashio</a><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;- ASHIO reads user input from stdin with the terminal in raw mode<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;- ASHIO's tab_complete() can take in a list of options either as a char** or as a struct x* with an offset indicating where to find a char* in each block of data<br>
+            </div>
+      <a id="AIO_but" href="javascript:showhide('AIO_vis', 'AIO_but', 'more about ASHIO', 'less about ASHIO')">more aboout ASHIO</a>
+<br>
+<br>
+      <strong>SMB</strong> is a chatroom for multi-user systems<br>
+            <div id="SMB_vis" style="display: none">
+            &nbsp;&nbsp;&nbsp;&nbsp;- SMB is written in c<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;- SMB is hosted on github at <a href="http://github.com/asherlie/smb">asherlie/smb</a><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;- SMB allows users to create arbitrarily many rooms within any board<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;- SMB's host daemon does not store any messages and does nothing more than reroute<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;messages between clients<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;- SMB's host daemon does not use any system resources when no chatters are connected<br>
+            </div>
+      <a id="SMB_but" href="javascript:showhide('SMB_vis', 'SMB_but', 'more about SMB', 'less about SMB')">more about SMB</a>
+<br>
+<br>
+      <strong>MEMCARVE</strong> is a library for interacting with the virtual memory space of running processes<br>
+            <div id="MEMC_vis" style="display: none">
+            &nbsp;&nbsp;&nbsp;&nbsp;- MEMCARVE is written in c<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;- MEMCARVE is hosted on github at <a href=http://github.com/asherlie/memcarve>asherlie/memcarve</a><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;- MEMCARVE includes the function pid_memcpy(), which is an inter-process<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;implementation of memcpy()<br>
+              </div>
+      <a id="MEMC_but" href="javascript:showhide('MEMC_vis', 'MEMC_but', 'more about MEMCARVE', 'less about MEMCARVE')">more about MEMCARVE</a>
+      <h5>projects that make use of memcarve are listed below</h5>
+            <strong>VAREDIT</strong> is a fast and intuitive to use command line tool for scanning and <br>
+            editing values in the memory of linux processes<br>
+            <div id="VARE_vis" style="display: none">
+                  &nbsp;&nbsp;&nbsp;&nbsp;- VAREDIT is written in c<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;- VAREDIT is written using memcarve<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;- VAREDIT is hosted on github at <a href="https://github.com/asherlie/varedit">asherlie/varedit</a><br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;- VAREDIT can find strings in memory or n-byte integers<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;- VAREDIT can be used either interactively or by specifying flags<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;- VAREDIT searches through all regions of a process' memory by default, but any<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;combination of stack, heap, or additional memory regions can be specified<br>
+                  </div>
+                  <a id="VARE_but" href="javascript:showhide('VARE_vis', 'VARE_but', 'more about VAREDIT', 'less about VAREDIT')">more about VAREDIT</a>
+<br>
+<br>
+            <strong>ROSE</strong> lets users search through values in the memory of linux processes using<br>
+            regular expressions<br>
+            <div id="ROSE_vis" style="display: none">
+                  &nbsp;&nbsp;&nbsp;&nbsp;- ROSE is written in c<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;- ROSE is written using memcarve<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;- ROSE is hosted on github at <a href="https://github.com/asherlie/rose">asherlie/rose</a><br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;- ROSE can search for either strings or integers<br>
+                  </div>
+                  <a id="ROSE_but" href="javascript:showhide('ROSE_vis', 'ROSE_but', 'more about ROSE', 'less about ROSE')">more about ROSE</a>
+<br>
+<br>
+            <strong>MEMLOCK</strong> is used to lock memory addresses to values<br>
+            <div id="MLOC_vis" style="display: none">
+                  &nbsp;&nbsp;&nbsp;&nbsp;- MEMLOCK is written in c<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;- MEMLOCK is written using memcarve<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;- MEMLOCK is hosted on github at <a href="https://github.com/asherlie/memlock">asherlie/memlock</a><br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;- memory locks put in place with MEMLOCK can stay in place after MEMLOCK<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exits depending on the instruction of the user<br>
+                  </div>
+                  <a id="MLOC_but" href="javascript:showhide('MLOC_vis', 'MLOC_but', 'more about MEMLOCK', 'less about MEMLOCK')">more about MEMLOCK</a>
+<HR WIDTH="100%">
+<strong>favorite c functions</strong><br><br>
+<a href="http://man7.org/linux/man-pages/man3/stpncpy.3.html">stp(n)cpy</a><br>
+<a href="http://man7.org/linux/man-pages/man3/memccpy.3.html">memccpy</a><br>
+<HR WIDTH="100%">
+
+</body>
+</html>
